@@ -1,0 +1,62 @@
+MODEL:
+
+
+TRAIN:
+  train_data_dir: [
+    './TextZoom/train1',
+    './TextZoom/train2',
+    # '/data0_ssd2t/majianqi/cute80_288/',
+    # '/data0_ssd2t/majianqi/NIPS2014',
+    # '/data1_ssd4t/majianqi/CVPR2016',
+    # "/data0_ssd2t/majianqi/video_seq"
+  ]
+  batch_size: 512
+  width: 128
+  height: 32
+  epochs: 500
+  cuda: True
+  ngpu: 1
+  workers: 8
+  resume: ''
+  ckpt_dir: './ckpt/ori_fam_simple_rec'
+  voc_type: 'all' #'digits lower upper all'
+  saveInterval: 500
+  displayInterval: 50 #display loss
+  adadelta: False
+  lr: 0.001
+  adam: True
+  optimizer: "Adam"
+  beta1: 0.5
+  manualSeed: 1234
+  max_len: 100
+  keep_ratio: False
+  down_sample_scale: 2
+
+  VAL:
+    val_data_dir: [
+      # '/data0_ssd2t/majianqi/cute80_288/'
+      './TextZoom/test/easy',
+      './TextZoom/test/medium',
+      './TextZoom/test/hard',
+      # "/home/data/majianqi/IC15rec_mdb/"
+      #'/home/data/majianqi/IC15rec_mdb/',
+      #"/data0_ssd2t/majianqi/curve_pick/LR/"
+
+
+    ]
+    n_vis: 10
+    vis_dir: 'ori_fam_simple_rec'
+    valInterval: 500 #-1, val at the end of epoch
+    rec_pretrained: './pretrained/aster.pth.tar'
+    moran_pretrained: './pretrained/moran.pth'
+    crnn_pretrained: './pretrained/crnn.pth'
+
+TEST:
+  checkpoint: ''
+  test_data_dir: [
+  ]
+
+CONVERT:
+  image_dir:
+  lmdb_dir:
+  n_convert: 10
