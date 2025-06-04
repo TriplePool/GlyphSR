@@ -11,7 +11,7 @@ source scripts/setup_env.sh
 ```
 - Download the [TextZoom](https://drive.google.com/drive/folders/1WRVy-fC_KrembPkaI68uqQ9wyaptibMh?usp=sharing) dataset and pretrained weights of [CRNN](https://www.dropbox.com/s/dboqjk20qjkpta3/crnn.pth?dl=0)
 - Change corresponding paths in the config file config/super_resolution_base.yaml 
-- download [GlyphSR checkpoints](https://pan.baidu.com/s/1ojyLdUEz_l0otCdb4tjLqg?pwd=366b)
+- Download [GlyphSR checkpoints](https://pan.baidu.com/s/1ojyLdUEz_l0otCdb4tjLqg?pwd=366b)
 
 ## Test for GlyphSR
 ```
